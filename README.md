@@ -8,7 +8,7 @@ This is a multi-page travel website featuring a minimalist design inspired by Ap
 
 ## File Structure
 ```
-travel-website/
+wanderDoo/
 ├── index.html
 ├── about.html
 ├── contact.html
