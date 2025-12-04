@@ -265,6 +265,7 @@ nav .container {
     padding: 8rem 2rem 4rem;
     background: #f5f5f7;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .contact-wrapper {
@@ -386,15 +387,20 @@ nav .container {
 @media (max-width: 768px) {
     .contact-container {
         padding: 6rem 1rem 2rem;
+        overflow-x: hidden;
     }
 
     .contact-wrapper {
         grid-template-columns: 1fr;
         gap: 0;
+        max-width: 100%;
+        margin: 0;
     }
 
     .contact-form-section {
         padding: 2rem 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .contact-form-section h2 {
@@ -404,27 +410,39 @@ nav .container {
 
     .form-group {
         margin-bottom: 1.2rem;
+        width: 100%;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
         padding: 0.75rem;
-        font-size: 0.95rem;
+        font-size: 16px;  /* Changed from 0.95rem to prevent iOS zoom */
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .radio-group {
-        flex-direction: column;
-        gap: 0.8rem;
+        flex-direction: row;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .radio-option {
+        min-width: auto;
     }
 
     .submit-btn {
         padding: 0.85rem 2rem;
-        font-size: 0.95rem;
+        font-size: 16px;  /* Changed from 0.95rem */
+        width: 100%;
     }
 
     .contact-info-section {
         padding: 2rem 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
+        word-wrap: break-word;
     }
 
     .contact-info-section h2 {
@@ -440,10 +458,16 @@ nav .container {
     .contact-item {
         font-size: 0.95rem;
         margin-bottom: 1.2rem;
+        word-break: break-word;
     }
 
     .contact-item i {
         font-size: 1.1rem;
+        flex-shrink: 0;
+    }
+
+    .contact-item span {
+        word-break: break-word;
     }
 
     .social-links {
@@ -465,6 +489,7 @@ nav .container {
 
     .contact-wrapper {
         border-radius: 12px;
+        width: 100%;
     }
 
     .contact-form-section,
@@ -485,7 +510,7 @@ nav .container {
     .form-group select,
     .form-group textarea {
         padding: 0.7rem;
-        font-size: 0.9rem;
+        font-size: 16px;
     }
 }-info-section h3 {
     margin: 2rem 0 1rem;
